@@ -1,6 +1,6 @@
 {
     "name": "node-js-server",
-    "description": "Banch project test server",
+    "description": "Bench project test server",
     "authors": "thetytn@gmail.com",
     "version": "1.0.0",
     "main": "app.js",
