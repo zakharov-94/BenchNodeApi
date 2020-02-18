@@ -10,7 +10,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
 app.get("/test", (req, res, next) => {
-    res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
+    res.json(["Hello", "World", "!!!"]);
 });
 
 app.listen(PORT, () => {
