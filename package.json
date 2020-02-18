@@ -5,7 +5,9 @@
   "authors": "thetytn@gmail.com",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\""
+    "postinstall": "npx tsc",
+    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
+    "start": "npx pm2 start pm2.yaml"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^5.0.0-alpha.7",
+    "pm2": "^4.2.3",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
     "swagger-ui-express": "^4.1.3",
