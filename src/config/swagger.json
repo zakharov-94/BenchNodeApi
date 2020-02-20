@@ -4,7 +4,7 @@
         "version": "1.0.0"
     },
     "host": "localhost:3000",
-    "basePath": "/api/v1",
+    "basePath": "/api",
     "schemes": ["http"],
     "produces": ["application/json"],
     "paths": {
@@ -27,6 +27,107 @@
                     "name": "q",
                     "in": "query",
                     "description": "Specifies the query string",
+                    "required": true,
+                    "type": "string"
+                }]
+            }
+        },
+        "/books": {
+            "get": {
+                "tags": ["Books"],
+                "summary": "Get books list",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": []
+            },
+            "post": {
+                "tags": ["Books"],
+                "summary": "Add book",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                },
+                "content": {
+                    "multipart/form-data": {
+                        "schema":  {
+                            "type": "object",
+                            "properties": {
+                                "title": { 
+                                    "type": "string",
+                                    "description": "Book title"
+                                },
+                                "author": {
+                                    "type": "string",
+                                    "description": "The author of the book"
+                                },
+                                "pagesCount": {
+                                    "type": "number",
+                                    "description": "Count of pages in the book"
+                                }
+                            },
+                            "required" : [
+                                "title",
+                                "author",
+                                "pagesCount"
+                            ]
+                        }
+                    }
+                },
+                "parameters": []
+            }
+        },
+        "/book": {
+            "get": {
+                "tags": ["Books"],
+                "summary": "Get book by id",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [{
+                    "name": "id",
+                    "in": "book id",
+                    "required": true,
+                    "type": "string"
+                }]
+            },
+            "delete": {
+                "tags": ["Books"],
+                "summary": "Delete book by id",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [{
+                    "name": "id",
+                    "in": "book id",
                     "required": true,
                     "type": "string"
                 }]

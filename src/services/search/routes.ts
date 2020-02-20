@@ -11,7 +11,7 @@ export default [
         }
     },
     {
-        path: "/api/v1/search",
+        path: "/api/search",
         method: "get",
         handler: [
             checkSearchParams,

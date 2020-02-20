@@ -8,3 +8,6 @@
     ##After that:
         npm install
         npm run dev
+
+#PROJECT INFORMATION
+    http://localhost:3000/api-docs/ - Swagger api documentation
