@@ -61,7 +61,7 @@
                     }
                 },
                 "content": {
-                    "multipart/form-data": {
+                    "application/json": {
                         "schema":  {
                             "type": "object",
                             "properties": {
@@ -103,6 +103,50 @@
                 },
                 "content": {
                     "application/json": {}
+                },
+                "parameters": [{
+                    "name": "id",
+                    "in": "book id",
+                    "required": true,
+                    "type": "string"
+                }]
+            },
+            "put": {
+                "tags": ["Books"],
+                "summary": "Update book by id",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "description": "Book title"
+                                },
+                                "author": {
+                                    "type": "string",
+                                    "description": "The author of the book"
+                                },
+                                "pagesCount": {
+                                    "type": "number",
+                                    "description": "Count of pages in the book"
+                                }
+                            },
+                            "required": [
+                                "title",
+                                "author",
+                                "pagesCount"
+                            ]
+                        }
+                    }
                 },
                 "parameters": [{
                     "name": "id",
