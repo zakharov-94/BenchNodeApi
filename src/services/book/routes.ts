@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { addBook, getBooks, getBook, deleteBook } from "./bookController";
+import { addBook, getBooks, getBook, deleteBook, updateBook } from "./bookController";
 
 export default [
     {
@@ -28,6 +28,16 @@ export default [
         handler: [
             async ({ query }: Request, res: Response) => {
                 const result = await getBook(query.id);
+                res.status(200).send(result);
+            }
+        ]
+    },
+    {
+        path: "/api/book",
+        method: "put",
+        handler: [
+            async ({ query, body }: Request, res: Response) => {
+                const result = await updateBook(query.id, body);
                 res.status(200).send(result);
             }
         ]
