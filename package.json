@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/zakharov-94/BenchNodeApi#readme",
   "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.2",
     "@types/compression": "^1.7.0",
     "@types/cors": "^2.8.6",
     "@types/dotenv": "^8.2.0",
