@@ -16,9 +16,10 @@ export default [
         handler: [
             checkSearchParams,
             async ({ query }: Request, res: Response) => {
-                const result = await getPlacesByName(query.q);
+                const name: string = query.q as string;
+                const result = await getPlacesByName(name);
                 res.status(200).send(result);
             }
         ]
     }
-];
+]

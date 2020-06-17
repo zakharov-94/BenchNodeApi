@@ -27,7 +27,8 @@ export default [
         method: "get",
         handler: [
             async ({ query }: Request, res: Response) => {
-                const result = await getBook(query.id);
+                const id = query.id as string;
+                const result = await getBook(id);
                 res.status(200).send(result);
             }
         ]
@@ -37,7 +38,8 @@ export default [
         method: "put",
         handler: [
             async ({ query, body }: Request, res: Response) => {
-                const result = await updateBook(query.id, body);
+                const id = query.id as string;
+                const result = await updateBook(id, body);
                 res.status(200).send(result);
             }
         ]
@@ -47,7 +49,8 @@ export default [
         method: "delete",
         handler: [
             async ({ query }: Request, res: Response) => {
-                const book = await deleteBook(query.id);
+                const id = query.id as string;
+                const book = await deleteBook(id);
                 res.status(200).send(book);
             }
         ]
